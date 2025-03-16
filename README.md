@@ -1,6 +1,6 @@
 # Remote Desktop
 
-Este é um projeto simples de Remote Desktop desenvolvido em C#. O objetivo é capturar a tela do servidor e transmiti-la para um cliente remotamente. O código foi feito de forma direta, sem muitas complexidades, ideal para portfólio e demonstração de conceitos básicos de redes e manipulação de imagens em C#.
+Este é um projeto simples de Remote Desktop desenvolvido em C#. O objetivo é capturar a tela do servidor e transmiti-la para um cliente remotamente. O código foi feito de forma direta, sem muitas complexidades, basicamente uma demonstração de conceitos básicos de redes e manipulação de imagens em C#.
 
 ---
 
