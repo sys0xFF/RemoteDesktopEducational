@@ -44,7 +44,7 @@ namespace RemoteDesktopEducational
                 MemoryStream ms = new MemoryStream();
                 ImageCodecInfo jpgEncoder = GetEncoder(ImageFormat.Jpeg);
                 EncoderParameters encoderParams = new EncoderParameters(1);
-                encoderParams.Param[0] = new EncoderParameter(Encoder.Quality, 50L);
+                encoderParams.Param[0] = new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, 50L);
                 bmp.Save(ms, jpgEncoder, encoderParams);
 
                 byte[] imgBytes = ms.ToArray();
