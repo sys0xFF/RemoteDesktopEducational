@@ -1,80 +1,80 @@
 # Remote Desktop
 
-Este é um projeto simples de Remote Desktop desenvolvido em C#. O objetivo é capturar a tela do servidor e transmiti-la para um cliente remotamente. O código foi feito de forma direta, sem muitas complexidades, basicamente uma demonstração de conceitos básicos de redes e manipulação de imagens em C#.
+This is a simple Remote Desktop project developed in C#. The goal is to capture the server's screen and transmit it remotely to a client. The code is straightforward, without many complexities, mainly serving as a demonstration of basic networking and image manipulation concepts in C#.
 
 ---
 
-## Sumário
+## Table of Contents
 
-- [Descrição](#descrição)
-- [Como Funciona](#como-funciona)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Como Executar](#como-executar)
-- [Contatos](#contatos)
-
----
-
-## Descrição
-
-O projeto é dividido em duas partes:
-
-- **Servidor**: Captura a tela do computador, converte a imagem em JPEG (com compressão a 50% de qualidade para balancear qualidade e desempenho) e envia os dados via TCP para o cliente.
-- **Cliente**: Conecta-se ao servidor via TCP, recebe os dados da imagem, reconstrói a imagem e exibe em um formulário Windows.
+- [Description](#description)
+- [How It Works](#how-it-works)
+- [Technologies Used](#technologies-used)
+- [How to Run](#how-to-run)
+- [Contact](#contact)
 
 ---
 
-## Como Funciona
+## Description
 
-1. **Servidor**:
-   - Inicia um `TcpListener` na porta 9999.
-   - Aguarda a conexão do cliente.
-   - Captura a tela usando `Graphics.CopyFromScreen` e converte a imagem em JPEG.
-   - Envia o tamanho da imagem seguido dos dados da imagem para o cliente.
-   - Repete o processo com um pequeno delay (20ms) para atualizar a tela.
+The project is divided into two parts:
 
-2. **Cliente**:
-   - Conecta-se ao servidor utilizando `TcpClient`.
-   - Cria uma thread para receber os dados.
-   - Recebe os bytes que representam o tamanho da imagem e, em seguida, a imagem em si.
-   - Reconstrói a imagem usando `Image.FromStream` e atualiza um `PictureBox` para exibição.
+- **Server**: Captures the computer screen, converts the image to JPEG (with 50% quality compression to balance quality and performance), and sends the data via TCP to the client.
+- **Client**: Connects to the server via TCP, receives the image data, reconstructs the image, and displays it in a Windows form.
 
 ---
 
-## Tecnologias Utilizadas
+## How It Works
 
-- **Linguagem**: C#
-- **Framework**: .NET (Windows Forms para a interface do cliente)
-- **Comunicação**: TCP para envio e recebimento de dados
+1. **Server**:
+   - Starts a `TcpListener` on port 9999.
+   - Waits for a client connection.
+   - Captures the screen using `Graphics.CopyFromScreen` and converts the image to JPEG.
+   - Sends the image size followed by the image data to the client.
+   - Repeats the process with a small delay (20ms) to update the screen.
 
----
-
-## Como Executar
-
-### Pré-requisitos
-
-- Visual Studio ou outro ambiente de desenvolvimento compatível com C#.
-- .NET Framework instalado (ou .NET Core, se adaptado).
-
-### Passos
-
-1. **Servidor**:
-   - Compile e execute o projeto do servidor.
-   - O servidor ficará aguardando a conexão de um cliente na porta 9999.
-
-2. **Cliente**:
-   - Compile e execute o projeto do cliente.
-   - O cliente tentará conectar-se ao servidor local (`127.0.0.1`) na porta 9999.
-   - Certifique-se de que o servidor está em execução antes de iniciar o cliente.
+2. **Client**:
+   - Connects to the server using `TcpClient`.
+   - Creates a thread to receive data.
+   - Receives the bytes representing the image size, followed by the image itself.
+   - Reconstructs the image using `Image.FromStream` and updates a `PictureBox` for display.
 
 ---
 
-## Contatos
+## Technologies Used
 
-- **Nome:** Anthony G. Sforzin  
-- **E-mail:** [anthony.sforzin@gmail.com](mailto:anthony.sforzin@gmail.com)  
+- **Language**: C#
+- **Framework**: .NET (Windows Forms for the client interface)
+- **Communication**: TCP for sending and receiving data
+
+---
+
+## How to Run
+
+### Prerequisites
+
+- Visual Studio or another C#-compatible development environment.
+- .NET Framework installed (or .NET Core if adapted).
+
+### Steps
+
+1. **Server**:
+   - Compile and run the server project.
+   - The server will wait for a client connection on port 9999.
+
+2. **Client**:
+   - Compile and run the client project.
+   - The client will try to connect to the local server (`127.0.0.1`) on port 9999.
+   - Make sure the server is running before starting the client.
+
+---
+
+## Contact
+
+- **Name:** Anthony G. Sforzin  
+- **Email:** [anthony.sforzin@gmail.com](mailto:anthony.sforzin@gmail.com)  
 - **GitHub:** [sys0xFF](https://github.com/sys0xFF)  
 - **LinkedIn:** [Anthony Sforzin](https://www.linkedin.com/in/anthony-sforzin-442150332/)
 
 ---
 
-Este README serve como um guia básico para entendimento e execução do projeto de Remote Desktop. Para mais detalhes, sinta-se à vontade para entrar em contato ou conferir meus outros projetos no GitHub.
+This README serves as a basic guide for understanding and running the Remote Desktop project. For more details, feel free to reach out or check out my other projects on GitHub.
